@@ -52,4 +52,28 @@ describe('registerTest', () => {
             cy.get('div[class="form-error form-error-- form-error-- form-error--"]').should('exist')
         })
     })
+
+    it('None-existent register confirm password test', () => {
+        cy.fixture('registerTest').then(data => {
+            cy.log("Переход на страницу регистрации")
+            cy.visit(data.main_url)
+
+            cy.log("Ввод логина")
+            cy.get('div[class="form__labels"] input:first').type(data.login)
+
+            cy.log("Ввод почты")
+            cy.get('div[class="form__labels"] div:first div:nth-child(2) input').type(data.email)
+
+            cy.log('Ввод подходящего пароля')
+            cy.get('div[class="form__labels"] div:first div:nth-child(3) input').type(data.password)
+
+            cy.log('Ввод неподходящего повтора пароля')
+            cy.get('div[class="form__labels"] div:first div:nth-child(4) input').type(data.none_existent_confirm_passwd)
+
+            cy.wait(1000)
+
+            cy.log("Проверка вывода сообщения, сигнализирующего об ошибке")
+            cy.get('div[class="form-error form-error-- form-error-- form-error--"]').should('exist')
+        })
+    })
 })
