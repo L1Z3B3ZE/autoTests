@@ -1,0 +1,10 @@
+{
+  "main_url": "https://dev.profteam.su/login",
+  "login": "testerEmployer",
+  "password": "Password1",
+  "requirement": "убраться дома",
+  "duties": "помыть полы",
+  "requests": "чисто убрать",
+  "student_login": "login",
+  "student_password": "QWEasd123"
+}
