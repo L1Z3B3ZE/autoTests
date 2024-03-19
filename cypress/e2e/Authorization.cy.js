@@ -1,4 +1,4 @@
-describe('loginTest', () => {
+describe('authorizationTest', () => {
   it('Existent authorization test', () => {
     cy.fixture('loginTest').then(data => {
       cy.log("Переход на страницу авторизации")
