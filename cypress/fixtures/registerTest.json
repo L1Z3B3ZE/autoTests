@@ -10,5 +10,7 @@
   "none_existent_confirm_passwd": "QWEASD123",
   "none_existent_surname": "ivanov",
   "none_existent_name": "ivan",
-  "none_existent_patronym": "ivanovich"
+  "surname": "Иванов",
+  "name": "Иван",
+  "patronym": "Иванович"
 }
