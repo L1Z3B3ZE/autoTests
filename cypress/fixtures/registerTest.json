@@ -7,5 +7,8 @@
   "none_existent_login": "логин",
   "none_existent_passwd": "te3st",
   "none_existent_email": "qweasd@asd",
-  "none_existent_confirm_passwd": "QWEASD123"
+  "none_existent_confirm_passwd": "QWEASD123",
+  "none_existent_surname": "ivanov",
+  "none_existent_name": "ivan",
+  "none_existent_patronym": "ivanovich"
 }
