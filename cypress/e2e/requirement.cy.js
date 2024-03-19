@@ -180,5 +180,33 @@ describe('studentRequirementTest', () => {
 
         })
     })
+
+    it('can not respond to a need', () => {
+        cy.fixture('requirement').then(data => {
+            cy.log("Переход на страницу авторизации")
+            cy.visit(data.main_url)
+
+            cy.log("Ввод существующего логина")
+            cy.get('input[class="form-input--text form-input"]').type(data.student_login)
+
+            cy.log('Ввод существующего пароля')
+            cy.get('input[class="form-input--password form-input"]').type(data.student_password)
+
+            cy.log("Клик по кнопке 'Войти' ")
+            cy.get('.button__background-color-green').click()
+            cy.wait(2000)
+
+            cy.log("Выбор пункта меню 'Потребности' ")
+            cy.get('nav[class="header__nav"] a:nth-child(2)').click()
+            cy.wait(2000)
+
+
+            cy.get('.need-item--approved').each(($needItem) => {
+                cy.wrap($needItem).within(() => {
+                    cy.get('.button__background-color-light-blue').should('be.disabled');
+                });
+            });
+        })
+    })
 })
 
