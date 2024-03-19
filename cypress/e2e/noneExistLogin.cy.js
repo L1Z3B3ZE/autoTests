@@ -16,6 +16,7 @@ describe('authorizationTest', () => {
 
             cy.wait(1000)
 
+            cy.log("Проверка вывода сообщения, сигнализирующего об ошибке")
             cy.get('div[class="form-error form-error-- form-error-- form-error--"]').should('exist')
 
         })
